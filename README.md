@@ -7,3 +7,5 @@ This is a somewhat simplified format i'm using to somewhat clear up what basic i
 ***
 
 I will be covering a few chapters included from the LIVE SQL book, however written with examples me or collegues have written, as well as including any informative examples with breakdowns
+
+`Hello WORLD`
