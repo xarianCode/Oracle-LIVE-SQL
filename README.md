@@ -152,8 +152,9 @@ SELECT *
 FROM Example
 WHERE [column/value],
 ```
-<hr>
-this code isn't very clear, but provides an idea of HOW where is used as a skeleton. Now, lets plug in some information to ensure it's working:
+this code isn't very clear, but provides an idea of HOW where is used as a skeleton.
+<br>
+ Now, lets plug in some information to ensure it's working:
 
 ```sql
 SELECT * 
