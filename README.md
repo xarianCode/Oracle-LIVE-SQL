@@ -18,7 +18,9 @@ For example creating tables with proper names, like
     city VARCHAR(20),
     Age NUMBER(2) 
 );
-        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+
+
+INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Mason', 'Adams', 'El Paso', 25);
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (2, 'Leslie', 'Red', 'New York', 34);
