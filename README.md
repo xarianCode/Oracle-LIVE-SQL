@@ -14,10 +14,10 @@ This specific page will cover a few things mainly pretaining to chapters.
 <details>
 <summary>TABLE OF CONTENTS</summary>
 
--[Chapter1](#chapter-1)   How to make a table and what it is and SYNTAX
--[Chapter2](#chapter-2)   How to make queries? Intro to syntax
--[Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
--[WIP](#WIP) Coming Soon
+-[Chapter1](#chapter-1)   How to make a table and what it is and SYNTAX <br>
+-[Chapter2](#chapter-2)   How to make queries? Intro to syntax <br>
+-[Chapter3](#chapter-3)   How to make a subquery/How to modify a table? <br>
+-[WIP](#WIP) Coming Soon <br>
 
 </details>
 
@@ -26,9 +26,17 @@ Unlike most books, this glossary will include examples (via the .sql files), wit
 
 
 # Chapter 1
-## How to make a table and what it is
+**How to make a table and what it is and SYNTAX**
 
-Now
+Now we are finally getting into the introduction! 
+to begin, we need to understand a few basic syntaxes
+
+```sql
+NUMBER      --it's a basic, yet effective method to input numericl information. This CAN be made more complicated later on, but that's later
+VARCHAR     --this is a more for string values rather than numbers, it inputs string values such as names, words, etc.
+
+
+```
 ```sql
 CREATE TABLE Example(
     ExampleID NUMBER(4),        -- This line of code establishes the "ID" as a definitive number up to 4 digits
