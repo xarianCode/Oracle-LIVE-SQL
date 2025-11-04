@@ -22,6 +22,7 @@ CREATE TABLE Example(
 ```
 then make sure to have information plugged into the actual table with example info:
 
+```
 INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Mason', 'Adams', 'El Paso', 25);
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
@@ -34,3 +35,4 @@ INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Mason', 'Adams', 'Tevyat', 21);
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Andrew', 'Graves', NULL, 2);
+```
