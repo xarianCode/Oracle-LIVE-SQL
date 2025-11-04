@@ -18,15 +18,15 @@ For example creating tables with proper names, like
     city VARCHAR(20),
     Age NUMBER(2) 
 );
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Mason', 'Adams', 'El Paso', 25);
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (2, 'Leslie', 'Red', 'New York', 34);
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Shawn', 'Velsor', 'Crestview', 22);
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Andrew', 'Gram', 'Jupiter', 32);
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Mason', 'Adams', 'Tevyat', 21);
-INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Andrew', 'Graves', NULL, 2);```
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (1, 'Mason', 'Adams', 'El Paso', 25);
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (2, 'Leslie', 'Red', 'New York', 34);
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (1, 'Shawn', 'Velsor', 'Crestview', 22);
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (1, 'Andrew', 'Gram', 'Jupiter', 32);
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (1, 'Mason', 'Adams', 'Tevyat', 21);
+        INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+        VALUES (1, 'Andrew', 'Graves', NULL, 2);```
