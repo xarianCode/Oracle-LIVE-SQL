@@ -150,6 +150,14 @@ lets look at an example here using Age as our "where" clause:
 ```sql
 SELECT * 
 FROM Example
+WHERE [column/value],
+```
+<hr>
+this code isn't very clear, but provides an idea of HOW where is used as a skeleton. Now, lets plug in some information to ensure it's working:
+
+```sql
+SELECT * 
+FROM Example
 WHERE Age = 21
 ```
 
