@@ -15,14 +15,15 @@ This specific page will cover a few things mainly pretaining to chapters.
 <summary>TABLE OF CONTENTS</summary>
 
 -[Chapter1](#chapter-1)<br>
-**How to make a table and what it is and SYNTAX <br>
--[Chapter2](#chapter-2)   How to make queries? Intro to syntax <br>
--[Chapter3](#chapter-3)   How to make a subquery/How to modify a table? <br>
--[WIP](#WIP) Coming Soon <br>
+    _How to make a table and what it is and SYNTAX_ <br>
+- [Chapter2](#chapter-2)   How to make queries? Intro to syntax <br>
+- [Chapter3](#chapter-3)   How to make a subquery/How to modify a table? <br>
+- [WIP](#WIP) Coming Soon <br>
 
 </details>
 
 Unlike most books, this glossary will include examples (via the .sql files), within the document itself and will also include examples alluded to.
+
 *please feel free to leave feedback, correct any mistakes or submit your own, better or more detailed examples*
 
 
@@ -38,6 +39,8 @@ VARCHAR     --this is a more for string values rather than numbers, it inputs st
 
 
 ```
+This code is incredibly useful to understand
+
 ```sql
 CREATE TABLE Example(
     ExampleID NUMBER(4),        -- This line of code establishes the "ID" as a definitive number up to 4 digits
