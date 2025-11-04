@@ -1,0 +1,186 @@
+-- CHAPTER 6 NOTES --
+
+/* Main chapter includes:
+
+how to use the ALTER SEQUENCE function
+Verify an index exists in the data dictionary
+rename one with ALTER INDEX
+remove with DELETE INDEX
+create/remove public synonyms 
+explaining a B-Tree and Bitmap
+in depth analysis on Index
+
+*/
+
+CACHE -- can be used to put the information into memory, until it is required or called
+
+ALTER SEQUENCE -- the only thing you can alter is the "increment value"
+
+
+--below is an example of a sequence, ignore the ""
+
+ALTER SEQUENCE "sequenceName"
+[INCREMENT BY "value"]
+[{MAXVALUE "value" | NOMAXVALUE}]
+[{MINVALUE "value" | NOMINVALUE}]
+[{CYCLE | NOCYCLE}]
+[{ORDER | NOORDER}]
+[{CACHE "value" | NOCACHE}];
+
+/* Do note that the previous sequence is NOT how its supposed to be formatted
+    use this format as an example:
+
+    CREATE(or alter) SEQUENCE Sequence_name
+    START WITH 1010
+    INCREMENT BY 1
+    NOMAXVALUE
+    NOMINVALUE
+    NOCYCLE
+    NOORDER
+    NOCACHE;
+
+    or alternatively, if using a Min/Max value use:
+
+    CREATE(or alter) SEQUENCE Sequence_name
+    START WITH 1010
+    INCREMENT BY 1
+    MAXVALUE 1020
+    MINVALUE 1010
+    CYCLE 
+    ORDER
+    CACHE 10;
+*/
+
+
+/*
+Please note that the previous CACHE function works as semi-toggle, as in, setting NOCACHE does not store anything while assigning it a value
+like CACHE 10, will store any number from the MINVAL to the MAXVAL.
+In the example above, Cache is storing any number from 1010 to 1019. 
+*/
+
+
+
+-- in order to remove or drop a sequence, be sure to use
+DROP SEQUENCE "sequenceName"
+
+-- to create an Index, you need to remember there are multiple types, B-Tree will be the most common one used.
+
+CREATE INDEX "IndexName"
+ON "TableName"("columnName, ...");
+
+-- as for Bitmaps, it goes as follows (roughly):
+
+CREATE BITMAP INDEX "indexName"
+ON "TableName" ("columnName, ...");
+
+
+-- Function based index:
+
+CREATE INDEX "indexName"
+ON "TableName" ("expression");
+
+-- to create an index-organized table:
+
+CREATE TABLE "TableName"
+("ColumnName datatype",
+"ColumnName datatype")
+ORGANIZATION INDEX;
+
+
+
+-- To alter these previous index typs, you can use ALTER, DROP, or add a synonym
+
+-- Note: Synonyms can be used as a way to provide a new form to refer to a table
+
+ALTER INDEX "IndexName"
+RENAME TO "NewName";
+
+DROP INDEX "IndexName";
+
+-- as for creating a synonym, use: 
+
+CREATE [PUBLIC] SYNONYM "synonymName" 
+FOR "ObjectNAME";
+
+-- and to drop it: 
+
+DROP [PUBLIC] SYNONYM "synonymName";
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE test_ident
+(coll NUMBER GENERATED AS IDENTITY PRIMARY KEY,
+COL2 NUMBER);
+
+-- this will create a table named "test_ident", add onto ORACLE SQL LIVE database
+
+INSERT INTO test_ident (col2)   -- this is to show its installing this information into column2 
+VALUES (350);
+
+
+-- lets try another example, but this time, give a value to both columns: 
+
+INSERT INTO test_ident (col1, col2)
+VALUES (222,335);
+
+--this will result in an error. this is because the Col1 is set as a
+
+
+-- this time, we will use another row, but set Col1 to "Default" value
+
+INSERT INTO test_ident (col1, col2)
+VALUES (DEFAULT, 360);
+
+commit;
+
+
+-- ROWID is often considered in an index to help find the actual, physical address of the information requested.
+
+SELECT ROWID, customer#, lastName, firstname
+FROM customers;
+
+-- this example is used to specifically find where the selected fields are. 
+
+-- WHERE condition if often used and mainly used to connect tables as well as specifying where information is the specific clause
+
+
+--                        Example Table                            --
+CREATE TABLE example_WHERE(
+    defaultVAL1 NUMBER DEFAULT 200,
+    defaultVAL2 NUMBER DEFAULT 100,
+    defaultVAL3 NUMBER DEFAULT 233,
+    defaultVAL4 NUMBER DEFAULT 455
+);
+
+--                            Usage of the WHERE condition                            --
+SELECT defaultVAL1, defaultVAL2, defaultVAL3, defaultVAL4 
+FROM example_WHERE
+WHERE NUMBER = 455;
+--------------------------------------------------------
+
+--this should display ONLY the values where "NUMBER" is equal to the value of "455" in this example
+
+
+--often the word "Cardinality" will be used to express a column in  a table with a diversity, a lot of unique values. Can also be referred to as "Selectivity"
+
+
+--Keep in mind there are different forms of the index, previously we went over the ideas of B-tree and bitmaps, however this will be focused on B-tree's
+
+
+--this is an example of a B-tree index in action;
+
+CREATE INDEX customers_zip_idx        --using the name of the table 
+ON customers (zip);                   --this line specifies which column to do this on
+
+
+-- think of B-tree as a literal tree, you hav ethe roots of the table, and the "leaves", this information is made BEFORE it is inserted into the table.
+--while often used, the reason you dont want to do this is because;
+/*
+
+1. it MUST be loaded every time and updated every time a modification operation is executed.
+
+-- This are is unfinished as of 10/31/2025, feel free to reach out and help @Xarian on Discord
+
+--erectile dysfunction
+--pen15

@@ -1,0 +1,128 @@
+-- CHAPTER ---
+
+-- will show usage of the WHERE clause and Comparisons too 
+
+SELECT [EX_title], [EX1]
+FROM [tablename]
+WHERE [EX1] > 55 ;
+
+-- This function helps find and modify the information display to only include those where "EX1" are Greater than 55
+
+/* different symbols mean different things: 
+        --  using a(n) = sign means you are looking for an exact match [55 = 55] is true 
+        --  using a(n) > sign means you are looking for anything GREATER than said value [Example > 5]
+        --  using a(n) < sign means you are looking for anythnig LESS THAN the said value [Exmaple < 5]
+        --  using a(n) <>, != ir ^=  sign(s) means you are looking for anything NOT equal to [ 45 != 32 is a true statement]
+        --  using a(n) <= sign means you are looking for anything less than or equal to [45 <= 45 is true, but so is 12 <= 45]
+        --  using a(n) => sign means you are looking for anythnig GREATER than or equal to [45 >= 45 is true, but so is 100 >= 45]
+*/
+
+-- an example of this could be formed using the following information
+
+SELECT *
+FROM customers
+WHERE customer# = 1010; 
+
+-- this is looking wherever the customer number will be equal to 1010
+
+-- Comparison operators work a little differently, usually searching for a range
+
+/* examples are as listed:
+
+    [NOT] BETWEEN x AND y    -- used to express a range, traditionally one found between the 2 values inserted
+    [NOT] IN(x,y,...)        -- used to express a logical function, usually excluding
+    [NOT] LIKE               -- used when you are looking for a pattern that DOES NOT contain the information in the field
+    IS [NOT] NULL            -- used to find any information that does NOT have any information in that specific field, EX: missing dates, missing information, etc.
+*/
+
+-- the IN operator does the opposite of the "NOT" function
+
+-- one example alluding to the table via Oracle SQL Live:
+
+SELECT title,pubid
+FROM books
+WHERE pibid IN (1,2,5);    -- essentially saying "match Pubid wherever it is valued as 1 OR 2 OR 5"
+
+
+-- LIKE operator can be used to find like-patterns, literlly
+
+SELECT lastname
+FROM customers
+WHERE lastname LIKE 'P%';       -- This is saying "look through customers LAST NAME for anything with "p" in is, the % sign simply means "anything after"
+
+-- for a quick intro to the %, using it on "p%" will bring up anything with P as a starting letter, however saing "per%" will ONLY find names starting with "per" and anything after.
+
+SELECT order#, orderdate
+FROM orders
+WHERE orderdate BETWEEN '01-apr-09' AND '04-apr-09';      --this is looking for any dates between  April 1st and april 4th of 2009.
+
+SELECT firstname, lastname
+FROM customers
+WHERE stat IN ('CA, TX');               --looking for customers from specifically California and Texas
+
+SELECT firstname, lastname, state
+FROM customers
+WHERE state NOT IN ('Ca', 'Tx');        --looking for customers from Anywhere BUT california and texas
+
+
+SELECT employee_id, last_name
+FROM employees
+WHERE last_name LIKE '%mar%';            -- this is looking for ANY employee name that has "mar" ANYWHERE in the name. In the example given in Oracle, "Omar" is the resulted employee for this search
+
+SELECT customer$, lastname, firstname
+FROM customers
+WHERE customer# LIKE '10_9';             -- this numbre is looking for ANY NUMBER that is 4 digits, has 10 as the first 2 numbers AND has 9 as the last [Ex: 1029, 1019, 1039, 1049]
+
+SELECT *
+FROM books 
+WHERE isbn LIKE '_4%0';                  -- this is a little more complex, but the same idea, looking for ANY number that starts with anything, has a 4 in the 2nd digits place, then ANYTHING in between BUT must end in 0
+
+-- an example isbn for the previous "like" can be [2412312550, 14126230, 520104560] and EXCLUDES [5344299123, 12994950, 145968190, 188590100]
+
+SELECT employee_id, last_name
+FROM employees
+WHERE last_name LIKE '_o_m%';            --like the previous, looks for any last name that has O as the second letter, M as the 4th and then anything after and in between [EX: Colmenares]
+
+
+
+
+
+-- Time for Logical operators
+
+
+-- usally composed of the values of "NOT", "AND", "OR"
+-- This function requires ONE of these statements is at least true
+
+SELECT title, pubid, category
+FROM books
+WHERE pubid = 3 AND category = "computer";          -- in this example, the AND function makes it to where the pubid MUST be 3 AND the category MUST be computer to be displayed, or else nothing is shown
+
+
+SELECT * 
+FROM books
+WHERE category = 'FAMILY LIFE' 
+    OR pubID = 4
+    AND cost >15;
+
+-- This example above looks for any instance of multipe info at the same time, however in an incorrect function, there is a "right way"
+
+-- usually try to remember operators are determined bottom-up
+
+SELECT *
+FROM books 
+WHERE (category = 'FAMILY LIFE' OR pubid = 4) 
+    AND cost > 15;
+
+-- This is a correct form of the previous example, now it looks for anything ABOVE 15 cost first, THEN looks for either "family life" categories OR any ID's where it is equal to 4
+
+
+
+-- NULL values are typically the abscense of data, typically used in place of literally nothing, works better overall
+
+SELECT order#, shipdate
+FROM orders
+WHERE shipdate IS NULL;  
+
+-- this looks for wherever the shipping date has no actual value and displays it in the query
+
+--

@@ -1,0 +1,65 @@
+/*
+
+alter the table named "orderitems"
+*/
+
+ALTER TABLE orderitems
+Add CONSTRAINT orderitems_pk
+PRIMARY KEY (order#, item#);
+
+ALTER TABLE personal_info
+ADD CONSTRAINT personal_info_pkey
+PRIMARY KEY (employee_id);
+
+
+/* dont forget to include a foreign key in the tables*/
+ALTER TABLE orderitems 
+ADD CONSTRAINT orders_customer#_fk FOREIGN KEY (customer#)
+REFERENCES cusomers (customer#);
+
+/* to add commands like saying a value has to be equal or greater/less than, you use
+
+<=         >=            or using    == or just = for "equals to"
+*/
+
+/*make an example table down below (for self practicing only)*/
+
+CREATE TABLE VideoGames
+vgID number(5),
+vgname varchar2(25) NOT NULL,
+vgDate date,
+vgCustomerID number(5);
+
+CREATE TABLE customer
+custID Number(5),
+custFname VARCHAR2(15);
+
+INSERT INTO VideoGames (vgName, vgDate, vgCustomerID)
+    ('Black ops 6', 01/25/2024, 5);
+
+ALTER TABLE VideoGames
+ADD COnSTRAINT VideoGames_pk 
+PRIMARY KEY (VideoGames_pk#, custID#);
+
+
+
+
+/* Address cannot be know, use the given SQL from prof to do this in Oracle*/
+
+ALTER TABLE Customers
+MODIFY (Address CONSTRAINT Customers_Customers#_nn NOT NULL);
+
+    
+
+    -- THIS IS FOR AN ASSIGNMENT
+
+    -- Creating a sequence for  Customer# column of Customers table. 
+CREATE SEQUENCE Customer#_seq 
+START WITH 1021
+INCREMENT BY 1
+NOCYCLE
+NOCACHE
+NOMINVALUE
+NOMAXVALUE;
+
+-- Add a new row to Customer with sequence in previous area
