@@ -14,7 +14,8 @@ This specific page will cover a few things mainly pretaining to chapters.
 <details>
 <summary>TABLE OF CONTENTS</summary>
 
--[Chapter1](#chapter-1)   How to make a table and what it is and SYNTAX <br>
+-[Chapter1](#chapter-1)<br>
+**How to make a table and what it is and SYNTAX <br>
 -[Chapter2](#chapter-2)   How to make queries? Intro to syntax <br>
 -[Chapter3](#chapter-3)   How to make a subquery/How to modify a table? <br>
 -[WIP](#WIP) Coming Soon <br>
