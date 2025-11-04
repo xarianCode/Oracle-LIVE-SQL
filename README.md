@@ -165,4 +165,5 @@ WHERE Age = 21
 This specific branch of code is essentially saying, Wherever the "age" column is equal to 21, which is only on Mason's row, 
 it will pull and display only info matching the expression.
 
+The main  difference between display 1 and display 2, the table without `WHERE` vs the table WITH `WHERE`, is that display 1 is showing ALL data from ALL fields in "Example" while display 2 is ONLY showing data wherever the age of the person is = to 21.
 ***
