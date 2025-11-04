@@ -107,7 +107,19 @@ For context, this line alone explains to the computer that in the table named `E
 
 ***
 
-Now obviously, after adding the main body of Inserting, we must plug in certain `Values`
+Now obviously, after adding the main body of Inserting, we must plug in certain `Values` to make sure the table properly contains information.
 
+```sql
+VALUES (1, 'Mason', 'Adams', 'El Paso', 25);
+
+```
+
+So lets break THIS down too. So inside the `()`, the commas are used to represent separation of data, in this case, it is separating the ID, then First name, Last name, so on and so forth.
+
+alltogether it should look like the table mentioned above. the huge clutter of code simply is just inserting a new row every time theres a new "insert" command.
+
+***
 
 # Chapter 2
+
+
