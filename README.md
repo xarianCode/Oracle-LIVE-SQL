@@ -11,12 +11,15 @@ I will be covering a few chapters included from the LIVE SQL book, however writt
 
 This specific page will cover a few things mainly pretaining to chapters. 
 
-**TABLE OF CONTENTS**
-- #[Chapter1](#chapter-1)   How to make a table and what it is
-- #[Chapter2](#chapter-2)   How to make queries? Intro to syntax
-- #[Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
+<details>
 
-For example creating tables with proper names, like
+<summary>**TABLE OF CONTENTS**</summary>
+- [Chapter1](#chapter-1)   How to make a table and what it is and SYNTAX
+- [Chapter2](#chapter-2)   How to make queries? Intro to syntax
+- [Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
+</details>
+Unlike most books, this glossary will include examples (via the .sql files), within the document itself and will also include examples alluded to.
+*please feel free to leave feedback, correct any mistakes or submit your own, better or more detailed examples*
 
 
 # Chapter 1
@@ -25,8 +28,8 @@ For example creating tables with proper names, like
 Now
 ```sql
 CREATE TABLE Example(
-    ExampleID NUMBER(4),
-    first_name VARCHAR(10),
+    ExampleID NUMBER(4),        -- This line of code establishes the "ID" as a definitive number up to 4 digits
+    first_name VARCHAR(10),     -- This line simply ex
     last_name VARCHAR(20),
     city VARCHAR(20),
     Age NUMBER(2)
