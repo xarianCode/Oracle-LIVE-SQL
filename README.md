@@ -16,9 +16,12 @@ This specific page will cover a few things mainly pretaining to chapters.
 
 -[Chapter1](#chapter-1)<br>
     _How to make a table and what it is and SYNTAX_ <br>
-- [Chapter2](#chapter-2)   How to make queries? Intro to syntax <br>
-- [Chapter3](#chapter-3)   How to make a subquery/How to modify a table? <br>
-- [WIP](#WIP) Coming Soon <br>
+- [Chapter2](#chapter-2)<br>
+    _How to make queries? Intro to syntax_ <br>
+- [Chapter3](#chapter-3)<br>
+    _How to make a subquery/How to modify a table?_ <br>
+- [WIP](#WIP)<br>
+    _Coming Soon_ <br>
 
 </details>
 
@@ -28,7 +31,7 @@ Unlike most books, this glossary will include examples (via the .sql files), wit
 
 
 # Chapter 1
-**How to make a table and what it is and SYNTAX**
+**_How to make a table and what it is and SYNTAX_**
 
 Now we are finally getting into the introduction! 
 to begin, we need to understand a few basic syntaxes
@@ -121,5 +124,11 @@ alltogether it should look like the table mentioned above. the huge clutter of c
 ***
 
 # Chapter 2
+**_How to make queries_**
 
+So now you have a basic idea of how to `CREATE` a table and how to understand SOME syntaxes, let us begin with actually displaying the information put into the actual table!
+
+Usually you want to begin using a few new syntaxes, such as `SELECT`, `FROM` and sometimes `WHERE`
+
+typically you want to organize the code as follows: 
 
