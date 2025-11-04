@@ -12,6 +12,7 @@ I will be covering a few chapters included from the LIVE SQL book, however writt
 
 This specific page will cover a few things mainly pretaining to chapters. 
 
+***
 <details>
 <summary>TABLE OF CONTENTS</summary>
 
@@ -25,6 +26,8 @@ This specific page will cover a few things mainly pretaining to chapters.
     _Coming Soon_ <br>
 
 </details>
+
+***
 
 Unlike most books, this glossary will include examples (via the .sql files), within the document itself and will also include examples alluded to.
 
@@ -94,7 +97,7 @@ INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Mason', 'Adams', 'Tevyat', 21);
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-        VALUES (1, 'Andrew', 'Graves', NULL, 2);
+        VALUES (1, 'Andrew', 'Graves', NULL, 20);
 ```
 
 ***
@@ -133,4 +136,24 @@ So now you have a basic idea of how to `CREATE` a table and how to understand SO
 Usually you want to begin using a few new syntaxes, such as `SELECT`, `FROM` and sometimes `WHERE`
 
 typically you want to organize the code as follows: 
+```sql
+SELECT *        --This code simply states "get ALL data"
 
+FROM Example;   --This code is used to explain WHERE the information is coming from, in this example, it's from the table "Example"
+```
+
+now if you noticed, not all syntax functions were used, as `WHERE` was not used at all. That's because the syntax is used when defining specific data and 
+requires more of a "Build" to push forward.
+
+lets look at an example here using Age as our "where" clause:
+
+```sql
+SELECT * 
+FROM Example
+WHERE Age = 21
+```
+
+This specific branch of code is essentially saying, Wherever the "age" column is equal to 21, which is only on Mason's row, 
+it will pull and display only info matching the expression.
+
+***
