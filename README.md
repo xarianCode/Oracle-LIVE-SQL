@@ -8,9 +8,15 @@ This is a somewhat simplified format i'm using to somewhat clear up what basic i
 
 I will be covering a few chapters included from the LIVE SQL book, however written with examples me or collegues have written, as well as including any informative examples with breakdowns
 
+
+This specific page will cover a few things mainly pretaining to chapters. 
+
+#[Chapter1](#chapter-1)
+#[Chapter2](#chapter-2)
 For example creating tables with proper names, like
 
 
+# Chapter 1
 ```sql
 CREATE TABLE Example(
     ExampleID NUMBER(4),
@@ -36,3 +42,5 @@ INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
         VALUES (1, 'Andrew', 'Graves', NULL, 2);
 ```
+
+
