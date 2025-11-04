@@ -34,6 +34,8 @@ Now we are finally getting into the introduction!
 to begin, we need to understand a few basic syntaxes
 
 ```sql
+CREATE      --kinda obvious, but for clarity. a keyword used to CREATE a new instance of a table, sequence and more
+
 NUMBER      --it's a basic, yet effective method to input numerical information. This CAN be made more complicated later on, but that's later
 
 VARCHAR     --this is a more for string values rather than numbers, it inputs string values such as names, words, etc.
@@ -42,7 +44,7 @@ PRIMARY KEY --this is primarily used for setting a primary key. There can only b
 
 FOREIGN KEY --this, like a primary key, is used to connect 2 tables together via similarities in information. an example will be shown soon
 
-CREATE      --kinda obvious, but for clarity. a keyword used to CREATE a new instance of a table, sequence and more
+VALUES      --this is a keyword used when inserting information into a table
 
 INSERT INTO --also somewhat obvious, but it simply insert information into a table, however it requires both a table and a skeleton
 
@@ -53,15 +55,20 @@ NULL        --this simply means there is no value, usually when displayed, it wi
 This code is incredibly useful to understand and very simple. Please note that the `()` is necessary and the `;` is also needed to finish off a section
 
 So to create a basic table, you typically want to start with "CREATE TABLE". So let's make a basic table together!
-To begin, you need to include a Table name, table ID and a few other information. We will use a few, custom values like `first_name`, `last_name`, `city` and `Age`.
+To begin, you need to include a Table name, table ID and a few other values. We will use a few, custom values like `first_name`, `last_name`, `city` and `Age`.
 
 ```sql
-CREATE TABLE Example(
-    ExampleID NUMBER(4),        -- This line of code establishes the "ID" as a definitive number up to 4 digits
-    first_name VARCHAR(10),     -- This line simply explains what type of info will be input into "first name"
-    last_name VARCHAR(20),      -- This line does the same as the previous, only it's "last name" instead
-    city VARCHAR(20),           -- This line defines what goes in the "City" area
-    Age NUMBER(2)               -- This line defines the "Age" as any 2 digit number (3 digits and 1 digit is unreal!)
+CREATE TABLE Example(        --This line established the tables name as "Example" and the open bracket makes all info between it linked to it
+
+    ExampleID NUMBER(4),     -- This line of code establishes the "ID" as a definitive number up to 4 digits
+
+    first_name VARCHAR(10),  -- This line simply explains what type of info will be input into "first name"
+
+    last_name VARCHAR(20),   -- This line does the same as the previous, only it's "last name" instead
+
+    city VARCHAR(20),        -- This line defines what goes in the "City" area
+
+    Age NUMBER(2)            -- This line defines the "Age" as any 2 digit number (3 digits and 1 digit is unreal!)
 );
 ```
 
@@ -87,8 +94,20 @@ INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
 
 ***
 
-This might seem like a lot of info, so let's break it down so it's easier to process, ok?
+This might seem like a lot of info, so let's break it down so it's easier to process
 
+So when beginning, we have to look back at the previous table, `Example`. In this table we inputted the information adding `ExampleID`, `first_name`, `last_name`, `city` and `Age`, and since we are plugging information into every field, we must insert in the following format
+
+```sql
+INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
+
+```
+
+For context, this line alone explains to the computer that in the table named `Example`, you are filling information for the fields within the brackets.
+
+***
+
+Now obviously, after adding the main body of Inserting, we must plug in certain `Values`
 
 
 # Chapter 2
