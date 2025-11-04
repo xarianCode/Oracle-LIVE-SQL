@@ -12,9 +12,9 @@ I will be covering a few chapters included from the LIVE SQL book, however writt
 This specific page will cover a few things mainly pretaining to chapters. 
 
 **TABLE OF CONTENTS**
->#[Chapter1](#chapter-1)   How to make a table and what it is
->#[Chapter2](#chapter-2)   How to make queries? Intro to syntax
->#[Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
+- #[Chapter1](#chapter-1)   How to make a table and what it is
+- #[Chapter2](#chapter-2)   How to make queries? Intro to syntax
+- #[Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
 
 For example creating tables with proper names, like
 
