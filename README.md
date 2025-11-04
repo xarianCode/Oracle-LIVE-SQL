@@ -11,12 +11,18 @@ I will be covering a few chapters included from the LIVE SQL book, however writt
 
 This specific page will cover a few things mainly pretaining to chapters. 
 
-#[Chapter1](#chapter-1)
-#[Chapter2](#chapter-2)
+**TABLE OF CONTENTS**
+>#[Chapter1](#chapter-1)   How to make a table and what it is
+>#[Chapter2](#chapter-2)   How to make queries? Intro to syntax
+>#[Chapter3](#chapter-3)   How to make a subquery/How to modify a table?
+
 For example creating tables with proper names, like
 
 
 # Chapter 1
+## How to make a table and what it is
+
+Now
 ```sql
 CREATE TABLE Example(
     ExampleID NUMBER(4),
@@ -44,3 +50,4 @@ INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
 ```
 
 
+# Chapter 2
