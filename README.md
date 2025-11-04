@@ -11,7 +11,7 @@ I will be covering a few chapters included from the LIVE SQL book, however writt
 For example creating tables with proper names, like
 
 
-`CREATE TABLE Example(
+```CREATE TABLE Example(
     ExampleID NUMBER(4),
     first_name VARCHAR(10),
     last_name VARCHAR(20),
@@ -29,4 +29,4 @@ VALUES (1, 'Andrew', 'Gram', 'Jupiter', 32);
 INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
 VALUES (1, 'Mason', 'Adams', 'Tevyat', 21);
 INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
-VALUES (1, 'Andrew', 'Graves', NULL, 2);`
+VALUES (1, 'Andrew', 'Graves', NULL, 2);```
