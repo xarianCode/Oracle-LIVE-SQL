@@ -34,12 +34,19 @@ Now we are finally getting into the introduction!
 to begin, we need to understand a few basic syntaxes
 
 ```sql
-NUMBER      --it's a basic, yet effective method to input numericl information. This CAN be made more complicated later on, but that's later
+NUMBER      --it's a basic, yet effective method to input numerical information. This CAN be made more complicated later on, but that's later
 VARCHAR     --this is a more for string values rather than numbers, it inputs string values such as names, words, etc.
-
-
+PRIMARY KEY --this is primarily used for setting a primary key. There can only be one per table and it's to ensure data uniqueness
+FOREIGN KEY --this, like a primary key, is used to connect 2 tables together via similarities in information. an example will be shown soon
+CREATE      --kinda obvious, but for clarity. a keyword used to CREATE a new instance of a table, sequence and more
+INSERT INTO --also somewhat obvious, but it simply insert information into a table, however it requires both a table and a skeleton
+NULL        --this simply means there is no value, usually when displayed, it will appear just as "NULL"
+()          --this bracket is simply used to enclose information for a certain function. I will show you how right after this
 ```
-This code is incredibly useful to understand
+This code is incredibly useful to understand and very simple. Please note that the `()` is necessary and the `;` is also needed to finish off a section
+
+So to create a basic table, you typically want to start with "CREATE TABLE". So let's make a basic table together!
+To begin, you need to include a Table name, table ID and a few other information. We will use a few, custom values like `first_name`, `last_name`, `city` and `Age`.
 
 ```sql
 CREATE TABLE Example(
