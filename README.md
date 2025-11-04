@@ -20,6 +20,7 @@ This specific page will cover a few things mainly pretaining to chapters.
 -[WIP](#WIP) Coming Soon
 
 </details>
+
 Unlike most books, this glossary will include examples (via the .sql files), within the document itself and will also include examples alluded to.
 *please feel free to leave feedback, correct any mistakes or submit your own, better or more detailed examples*
 
