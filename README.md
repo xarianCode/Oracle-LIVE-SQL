@@ -1,6 +1,7 @@
 # Welcome to my "simplified" notes for the course of Oracle LIVE SQL databases!
 
 This is a somewhat simplified format i'm using to somewhat clear up what basic introductions to Oracle LIVE SQL is with examples.
+to simulate making a database, feel free to use Oracle Live SQL 
 
 >[!Important]
 >**PLEASE NOTE: IF ANY INFORMATION IS WRONG PLEASE LET ME KNOW VIA DISCORD AT fallinq_marx4509**
@@ -187,13 +188,13 @@ CREATE TABLE ExampleStore(
 
     ExampleID Number(5),
 
-    ExampleItems VARCHAR(20),
+    ExampleItems VARCHAR2(20),
 
     ExampleInventory NUMBER(4),
 
-    ExampleCost Number(3,2),
+    ExampleCost Number(4,2),
 
-    ExampleRetail NUMBER (3,2),  
+    ExampleRetail NUMBER (4,2)  
 );
 ```
 
@@ -216,12 +217,19 @@ NUMBER (5,2) -- This is stating there are 5 digits, 2 on the RIGHT of the decima
 Back to the table example,  let's now plugin some information, feel free to copy/paste the information or copy it in your own words
 
 ```sql
-INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
-VALUES (10532, 'Pancake Mix', 1000, 5.50 - 7.50);
-INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
-VALUES (10533, 'Cookies', 2321, 4.35-5.99);
-INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
-VALUES (10534, 'Doughnuts', 1222, 10.25-16.50);
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail, ExampleCost)
+VALUES (10532, 'Pancake Mix', 1000, 7.50, 5.50);
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail, ExampleCost)
+VALUES (10533, 'Cookies', 2321, 5.99, 3.35);
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail, ExampleCost)
+VALUES (10534, 'Doughnuts', 1222, 16.50, 10.25);
+```
+After plugging in our information, lets go ahead and add a "subract" function and display the final profits for this example company.
+We do have to keep in mind though that we will be using a new function once again.
+
+```sql
+SELECT ExampleID, ExampleItems, ExampleIventory, (ExampleRetail - ExampleCost) AS ExampleProfits
+FROM ExampleStore;
 ```
 
 altogether we should have a table that properly displays the item ID, item being sold, inventory count of the item and the profit made from the item AFTER deductions
