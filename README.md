@@ -4,6 +4,7 @@ This is a somewhat simplified format i'm using to somewhat clear up what basic i
 
 >[!Important]
 >**PLEASE NOTE: IF ANY INFORMATION IS WRONG PLEASE LET ME KNOW VIA DISCORD AT fallinq_marx4509**
+>do also note: This code is written for Oracle SQL, however it will work for other SQl's, just with a few different wordings and format.
 
 ***
 
@@ -16,7 +17,7 @@ This specific page will cover a few things mainly pretaining to chapters.
 <details>
 <summary>TABLE OF CONTENTS</summary>
 
--[Chapter1](#chapter-1)<br>
+- [Chapter1](#chapter-1)<br>
     _How to make a table and what it is and SYNTAX_ <br>
 - [Chapter2](#chapter-2)<br>
     _How to make queries? Intro to syntax_ <br>
@@ -31,7 +32,7 @@ This specific page will cover a few things mainly pretaining to chapters.
 
 Unlike most books, this glossary will include examples (via the .sql files), within the document itself and will also include examples alluded to.
 
->[!Please note]
+>[!Note]
 >*please feel free to leave feedback, correct any mistakes or submit your own, better or more detailed examples*
 
 
@@ -83,7 +84,8 @@ CREATE TABLE Example(        --This line established the tables name as "Example
 ***
 Now usually when making a table, like above, you are only making the SKELETON of a table. **YOU** have to go in and input information yourself, though I'll demonstrate below!
 
-*Please note the following information is beginner information and CAN be improved later on*
+>[!Important]
+>*Please note the following information is beginner information and CAN be improved later on, feel free to plugin any information and play with the code yourself*
 
 ```sql
 INSERT INTO Example (ExampleID, first_name, last_name, city, Age)
@@ -128,6 +130,8 @@ alltogether it should look like the table mentioned above. the huge clutter of c
 
 ***
 
+
+
 # Chapter 2
 **_How to make queries_**
 
@@ -145,13 +149,17 @@ FROM Example;   --This code is used to explain WHERE the information is coming f
 now if you noticed, not all syntax functions were used, as `WHERE` was not used at all. That's because the syntax is used when defining specific data and 
 requires more of a "Build" to push forward.
 
-lets look at an example here using Age as our "where" clause:
+lets look at an example here using Age as our `WHERE` clause:
 
 ```sql
 SELECT * 
 FROM Example
 WHERE [column/value],
 ```
+
+>[!NOTE]
+>It is especially important to note that the `WHERE` function will not ALWAYS be used, but it is incredibly useful for control of information flow
+
 this code isn't very clear, but provides an idea of HOW where is used as a skeleton.
 <br>
  Now, lets plug in some information to ensure it's working:
@@ -166,4 +174,56 @@ This specific branch of code is essentially saying, Wherever the "age" column is
 it will pull and display only info matching the expression.
 
 The main  difference between display 1 and display 2, the table without `WHERE` vs the table WITH `WHERE`, is that display 1 is showing ALL data from ALL fields in "Example" while display 2 is ONLY showing data wherever the age of the person is = to 21.
+
 ***
+
+Now coming to a little more complicated table and functions, let's introduct Arithmetic functions!
+
+Typically you want to use these to calculate functions such as finding prices after removed retail and item cost. 
+Let's hop right in and see how this works by first creating a table to use for our example:
+
+```sql
+CREATE TABLE ExampleStore(
+
+    ExampleID Number(5),
+
+    ExampleItems VARCHAR(20),
+
+    ExampleInventory NUMBER(4),
+
+    ExampleCost Number(3,2),
+
+    ExampleRetail NUMBER (3,2),  
+);
+```
+
+Now if you payed close attention, you'll have noticed there is a new datatype. `NUMBER` has 2 separate digits. This was alluded to in [#Chapter1](#chapter-1) 
+
+Whenever you are defining a number value, you can specify how many digits there are both BEFORE and AFTER a decimal points
+
+> See it as such:
+```sql
+NUMBER(5)    -- This value is consisting of 5 digits total, regardless of location
+
+NUMBER (5,2) -- This is stating there are 5 digits, 2 on the RIGHT of the decimal point
+
+```
+
+>[!NOTE]
+> Think of it like this, in case it's not clear.
+> `NUMBER(5,2)` can be numbers like 433.25, 111.33, 192.94
+
+Back to the table example,  let's now plugin some information, feel free to copy/paste the information or copy it in your own words
+
+```sql
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
+VALUES (10532, 'Pancake Mix', 1000, 5.50 - 7.50);
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
+VALUES (10533, 'Cookies', 2321, 4.35-5.99);
+INSERT INTO ExampleStore (ExampleID, ExampleItems, ExampleInventory, ExampleRetail-ExampleCost)
+VALUES (10534, 'Doughnuts', 1222, 10.25-16.50);
+```
+
+altogether we should have a table that properly displays the item ID, item being sold, inventory count of the item and the profit made from the item AFTER deductions
+
+
